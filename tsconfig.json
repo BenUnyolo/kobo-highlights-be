@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es6",
+    "rootDir": "./",
+    "esModuleInterop": true // enables default imports for TypeScript modules with export = syntax that you’ll need for importing from the Express library
+  },
+  "include": [
+    "src/**/*"
+  ]
+}
