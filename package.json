@@ -2,7 +2,7 @@
   "name": "kobo-highlights",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/app.ts",
   "scripts": {
     "serve": "nodemon src/app.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
