@@ -7,7 +7,7 @@ import Database from "better-sqlite3";
 import deleteFile from "./utils/deleteFile";
 
 const app = express();
-const port = 8080;
+const port = process.env.PORT || 8080;
 
 app.use(express.urlencoded({ extended: false })); // body parsing middleware, exposes incoming requests in req.body
 app.use(cors());
