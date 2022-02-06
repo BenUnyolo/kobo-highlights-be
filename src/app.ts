@@ -15,6 +15,10 @@ app.use(morgan("dev")); // logs HTTP requests in console
 
 const upload = multer({ dest: `postedDbs/` }); // multer configuration
 
+app.get("/", (req, res) => {
+  res.status(200).send("Hello server is running").end();
+});
+
 app.post("/", upload.single("sqllite_file"), function (req, res) {
   try {
     // TODO need to add more error handling here
