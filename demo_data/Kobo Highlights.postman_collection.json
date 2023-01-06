@@ -1,0 +1,150 @@
+{
+	"info": {
+		"_postman_id": "fde735e3-fa98-44ca-bf96-7977a9c70a1e",
+		"name": "Kobo Highlights",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Post File",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "sqllite_file",
+							"type": "file",
+							"src": "/Users/benunyolo/Code/personal/kobo-highlights/api/demo_data/KoboReader.sqlite"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post File Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "sqllite_file",
+							"type": "file",
+							"src": []
+						},
+						{
+							"key": "something",
+							"value": "something_else",
+							"type": "default",
+							"disabled": true
+						},
+						{
+							"key": "a_file",
+							"type": "file",
+							"src": [],
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/convert",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"convert"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post File Copy 2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "sqllite_file",
+							"type": "file",
+							"src": "/Users/benunyolo/Code/personal/kobo-highlights/api/demo_data/KoboReader.sqlite"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://kobo-highlights-be.vercel.app/",
+					"protocol": "https",
+					"host": [
+						"kobo-highlights-be",
+						"vercel",
+						"app"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Next Post File",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "key",
+							"value": "value",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/jsonConvert",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"jsonConvert"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "property",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

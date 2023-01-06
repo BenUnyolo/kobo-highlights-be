@@ -21,13 +21,15 @@ app.get("/", (req, res) => {
 
 app.post("/", upload.single("sqllite_file"), function (req, res) {
   try {
-    // TODO need to add more error handling here
-    // TODO sanitizing?
     if (!req.file) {
-      // no file uploaded
-      res.send({
-        status: false,
-        message: "No file uploaded",
+      res.status(400).send({
+        code: "NO_FILE_UPLOADED",
+        message: "No file uploaded.",
+      });
+    } else if (!req.file.originalname.endsWith(".sqlite")) {
+      res.status(400).send({
+        code: "INVALID_FILE_TYPE",
+        message: "Make sure you're uploading a KoboReader.sqlite file.",
       });
     } else {
       const filePathDb = req.file.path;
@@ -61,8 +63,6 @@ app.post("/", upload.single("sqllite_file"), function (req, res) {
       // const filePathCsv = `${filePathDb}.csv`;
 
       res.send(sqlData);
-
-      // console.log(filePathDb);
     }
   } catch (err) {
     deleteFile(req.file.path, "database");
